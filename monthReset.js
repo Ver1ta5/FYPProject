@@ -1,6 +1,6 @@
 import {
     onMonthlyResetBudget, insertMonthlyReset, getMonthlyReset, updateMonthlyReset, getTotalPersonalSpent,
-    getPersonalTaskBudget, getStatistics, insertIntoStatistics, updateStatistics
+    getPersonalRemainingBudget, getStatistics, insertIntoStatistics, updateStatistics
 } from './database';
 
 
@@ -9,7 +9,7 @@ const checkIfBudgetMaintained =async () => {
 //         //current task to next month budget
     const remainingTaskBudget = await getTotalPersonalSpent()
     console.log('remainingTaskBudget.stat:',remainingTaskBudget)
-    const remainingBudget = await getPersonalTaskBudget()||0
+    const remainingBudget = await getPersonalRemainingBudget()||0
     console.log('remainingBudget.stat:',remainingBudget)
     const budgetSaved = remainingBudget + remainingTaskBudget
     return budgetSaved
