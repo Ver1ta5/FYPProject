@@ -254,7 +254,7 @@ export const updateBudgetCounter = async (budget) => {
         
         //remaining budget
         const remainingBudget = await getPersonalRemainingBudget() || 0; 
-        console.log('totalTaskBudget:',remainingBudget)
+        console.log('remainingBudget:',remainingBudget)
         
         const budgetSpent = currentBudgetSet - Math.abs(remainingBudget); 
         console.log('budgetSpent:',budgetSpent)
